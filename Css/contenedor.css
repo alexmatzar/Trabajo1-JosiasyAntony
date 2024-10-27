@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    z-index: -1;
+}
+
+html, body {
+    display: grid;
+    height: 80%;
+    place-items: center;
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin-inline: auto;
+}
+
+img {
+    width: 100%;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    gap: 0.25;
+}
+
+.image {
+    flex: 1;
+    aspect-ratio: 1/ 1.5;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: 0.4s;
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1.5;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.description {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#image1:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+#image2:hover .description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image:hover {
+    transform: scale(1.2);
+}
+
+.gallery:hover > :not(:hover) {
+    margin-inline: -1.5rem;
+    transform: perspective(400px) rotateY(30deg) scale(0.8);
+}
+
+.image:hover ~ .image {
+    transform: perspective(400px) rotateY(-30deg) scale(0.8);
+}

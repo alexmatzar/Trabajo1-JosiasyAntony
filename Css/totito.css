@@ -1,0 +1,230 @@
+* {
+    margin: 10;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #0d0d0d;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.start-container, .game-container {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+/* Estilos para la intro */
+.intro-container {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../Img/fondoplaneta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+
+.background-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); /* Color negro con 30% de opacidad */
+    z-index: 2; /* Asegúrate de que esté encima de la imagen */
+}
+
+
+.characters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.character {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    position: relative;
+    animation: characterFloat 3s infinite;
+}
+
+.character.rick {
+    animation-delay: 0.5s;
+}
+
+.character.morty {
+    animation-delay: 0.2s;
+}
+
+.dialogue {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: 20px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+}
+
+.dialogue p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.4;
+    color: white;
+}
+
+.character img {
+    width: 440px;
+    height: auto; 
+    filter: drop-shadow(0 0 15px rgba(60, 214, 113, 0.5));
+}
+
+
+@keyframes characterFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Estilos del juego */
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px auto;
+    width: 300px;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #444;
+    border: 2px solid #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cell:hover {
+    background-color: #555;
+}
+
+.scoreboard {
+    margin: 20px 0;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 5px;
+    cursor: pointer;
+    background-color: #008cba;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #005f8a;
+}
+
+#resultContainer {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+#resultMessage {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Animación del portal (opcional) */
+.portal-animation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.portal {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle at center, 
+        #3cd671 0%,
+        #2fb344 25%,
+        #267f2e 50%,
+        #1a4f1d 75%,
+        #0d0d0d 100%);
+    border-radius: 50%;
+    animation: portalPulse 3s infinite;
+    opacity: 0.4;
+}
+
+@keyframes portalPulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #3cd671;
+    }
+    50% {
+        transform: scale(1.2);
+        box-shadow: 0 0 40px #3cd671;
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px #3cd671;
+    }
+}

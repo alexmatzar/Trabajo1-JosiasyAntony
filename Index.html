@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Mejores Juegos</title>
+    <link rel="stylesheet" href="Css/Index.css">
+</head>
+<body>
+    <header>
+        <div class="logo-contenedor">
+            <img src="Img/logomorty.png" height="70px" width="70px" alt="Logo">
+            <h2>Rick and Morty Games</h2>
+        </div>
+        <nav class="menu-superior">
+            <ul>
+                <li><a id="principalk" href="subhtmls/creditos.html" target="iframe-contenido">Sobre la página</a></li>
+                <li><a href="subhtmls/contenedor.html" target="iframe-contenido">Juegos!</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="contenedor">
+        <main>
+            <section>
+                <iframe name="iframe-contenido" src="subhtmls/creditos.html" frameborder="0"></iframe>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>Desarrolladores: Antony Bocel y Alex Mátzar</p>
+    </footer>
+
+    <script>
+        function setActiveLink() {
+            const links = document.querySelectorAll('.menu-superior a');
+            links.forEach(link => {
+                link.classList.remove('active');
+                if (link.href === window.location.href) {
+                    link.classList.add('active');
+                }
+            });
+        }
+        
+        window.onload = function() {
+            document.getElementById('principalk').click();
+        };
+    </script>
+</body>
+</html>

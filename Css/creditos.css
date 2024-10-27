@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', sans-serif;
+    background-image: url('../Img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.creditos-contenedor {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.titulo h1 {
+    font-size: 3em;
+    color: #00FF00;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.informacion {
+    margin-top: 20px;
+}
+
+.informacion h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #00FF00;
+}
+
+.informacion p {
+    font-size: 1.5em;
+}
+
+.resaltado {
+    color: #00FF00;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Descripción */
+.descripcion {
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.descripcion p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.descripcion strong {
+    color: #00FF00;
+}
+
+h1, h2, p {
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}

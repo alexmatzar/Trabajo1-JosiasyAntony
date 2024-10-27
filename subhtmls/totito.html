@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Totito</title>
+    <link rel="stylesheet" href="../Css/totito.css">
+</head>
+<body>
+    <div class="start-container" id="startContainer">
+        <button id="startButton">Iniciar</button>
+    </div>
+
+    <div class="intro-container" id="introContainer" style="display: none;">
+        <div class="background-container"></div>
+        <div class="characters-container">
+            <div class="character rick">
+                <img src="../Img/rick2.png" alt="Rick">
+                <div class="dialogue">
+                    <p>Morty, si quieres esa fragancia especial para impresionarte con Jessica, primero tendrás que ganarme en Totito.</p>
+                </div>
+            </div>
+            <div class="character morty">
+                 <img src="../Img/morty2.png" alt="Morty">
+                <div class="dialogue">
+                        <p>¡Ay, Rick! ¿No podrías solo prestármela? ¡Necesito que Jessica se fije en mí!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <h1>Juego de Totito</h1>
+        <div class="scoreboard">
+            <p>Victorias de Rick: <span id="rickScore">0</span></p>
+            <p>Victorias de Morty: <span id="mortyScore">0</span></p>
+        </div>
+        <div class="grid" id="grid"></div>
+        <div id="resultContainer" style="display: none;">
+            <p id="resultMessage"></p>
+            <button id="restartButton">Volver a Jugar</button>
+            <button id="exitButton">Salir</button>
+        </div>
+    </div>
+
+    <script src="../Js/totito.js"></script>
+</body>
+</html>

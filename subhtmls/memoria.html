@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Memoria</title>
+    <link rel="stylesheet" href="../Css/memoria.css">
+</head>
+<body>
+    <div class="start-container" id="startContainer">
+        <button id="startButton">Iniciar</button>
+        <button id="exitButton">Salir al menú</button>
+    </div>
+
+    <div class="intro-container" id="introContainer" style="display: none;">
+        <div class="character rick">
+            <img src="../Img/rick.png" alt="Rick">
+            <div class="dialogue">
+                <p>¡Solo tú puedes salvarnos! Resuelve el juego de memoria o estamos perdidos, Morty.</p>
+            </div>
+        </div>
+        <div class="character morty">
+            <img src="../Img/morty.png" alt="Morty">
+            <div class="dialogue">
+                <p>¡Sí, jugador! Tú puedes hacerlo, no nos falles ahora.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="celebration-container" id="celebrationContainer" style="display: none;">
+        <div class="celebration-content">
+            <img src="../Img/imgfestejo.png" alt="Rick and Morty">
+            <div class="dialogue">
+                <p>¡Lo has logrado! Gracias por la ayuda, ¡eres increíble!</p>
+            </div>
+        </div>
+    </div>    
+
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <h1>Juego de Memoria</h1>
+        <div class="grid" id="grid"></div>
+    </div>
+
+    <script src="../Js/memoria.js"></script>
+</body>
+</html>
